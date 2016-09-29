@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cmdb</title>
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    {{ username }}
+    <div class="panel-body">
+        <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>IDC名称</th>
+                    <th>联系人</th>
+                    <th>地址</th>
+                    <th>联系电话</th>
+                </tr>
+            </thead>
+            <tbody>
+            {%  for idc in idc_result %}
+                <tr>
+                    <td>{{ idc.id }}</td>
+                    <td>{{ idc.name }}</td>
+                    <td>{{ idc.contact }}</td>
+                    <td>{{ idc.address }}</td>
+                    <td>{{ idc.tel_phone }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- /.table-responsive -->
+    </div>
+<hr>
+<a href="/add_idc/"><button>新增idc</button></a>
+</body>
+</html>
